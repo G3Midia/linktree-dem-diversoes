@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links • Cliente</title>
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #111827, #1f2933);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 20px;
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .profile {
+      margin-bottom: 24px;
+      animation: slideDown 0.8s ease;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .username {
+      margin-top: 14px;
+      font-size: 18px;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    .links {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: itemIn 0.6s ease forwards;
+      position: relative;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* texto central */
+}
+
+    }
+
+    .link i {
+      font-size: 18px;
+      width: 24px;
+      text-align: center;
+    }
+
+
+    .link:hover {
+      transform: translateY(-2px) scale(1.01);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .link:hover i {
+      transform: scale(1.15);
+    }
+
+
+    /* Delay de entrada */
+    .link:nth-child(1) { animation-delay: 0.3s; }
+    .link:nth-child(2) { animation-delay: 0.45s; }
+    .link:nth-child(3) { animation-delay: 0.6s; }
+    .link:nth-child(4) { animation-delay: 0.75s; }
+    .link:nth-child(5) { animation-delay: 0.9s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes itemIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 12px;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="profile">
+      <img src="img/insta.jpg" alt="Foto de perfil">
+      <div class="username">@dem_diversoes</div>
+    </div>
+
+    <div class="links">
+      <a class="link" href="https://api.whatsapp.com/send/?phone=556992329825&type=phone_number&app_absent=0&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGni_bNhEYQ-qGE63cYQ-_GxheNvkyXJHpKYvl9r322K4nVXKUU_xhUlLgyKJY_aem_-HUh9haFmBbqwcrWjXiQJg" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Falar no WhatsApp</span>
+      </a>
+
+      <a class="link" href="https://www.instagram.com/dem_diversoes/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+
+      <a class="link" href="https://www.facebook.com/profile.php?id=100070061812267" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+        <span>Facebook</span>
+      </a>
+
+      <a class="link" href="https://wa.me/c/556992329825" target="_blank">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Catálogo</span>
+      </a>
+
+      <a class="link" target="_blank">
+        <i class="fa-solid fa-globe"></i>
+        <span>Site Oficial (Em breve)</span>
+      </a>
+
+
+    <footer>
+      © 2026 • Todos os direitos reservados
+    </footer>
+
+  </div>
+
+</body>
+</html>
