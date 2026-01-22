@@ -13,6 +13,21 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '781577447570930');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
   <style>
     * {
       margin: 0;
@@ -145,6 +160,9 @@
   </style>
 </head>
 <body>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=781577447570930&ev=PageView&noscript=1"
+  /></noscript>
 
   <div class="container">
 
@@ -154,31 +172,59 @@
     </div>
 
     <div class="links">
-      <a class="link" href="https://api.whatsapp.com/send/?phone=556992329825&type=phone_number&app_absent=0&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGni_bNhEYQ-qGE63cYQ-_GxheNvkyXJHpKYvl9r322K4nVXKUU_xhUlLgyKJY_aem_-HUh9haFmBbqwcrWjXiQJg" target="_blank">
+      <a class="link" data-event="contact" data-label="whatsapp" href="https://api.whatsapp.com/send/?phone=556992329825&type=phone_number&app_absent=0&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGni_bNhEYQ-qGE63cYQ-_GxheNvkyXJHpKYvl9r322K4nVXKUU_xhUlLgyKJY_aem_-HUh9haFmBbqwcrWjXiQJg" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
         <span>Falar no WhatsApp</span>
       </a>
 
-      <a class="link" href="https://www.instagram.com/dem_diversoes/" target="_blank">
+      <a class="link" data-event="view" data-label="instagram" href="https://www.instagram.com/dem_diversoes/" target="_blank">
         <i class="fa-brands fa-instagram"></i>
         <span>Instagram</span>
       </a>
 
-      <a class="link" href="https://www.facebook.com/profile.php?id=100070061812267" target="_blank">
+      <a class="link" data-event="view" data-label="facebook" href="https://www.facebook.com/profile.php?id=100070061812267" target="_blank">
         <i class="fa-brands fa-facebook"></i>
         <span>Facebook</span>
       </a>
 
-      <a class="link" href="https://wa.me/c/556992329825" target="_blank">
+      <a class="link" data-event="view" data-label="catalogo" href="https://wa.me/c/556992329825" target="_blank">
         <i class="fa-solid fa-book-open"></i>
         <span>Catálogo</span>
       </a>
 
-      <a class="link" href="https://dem-diversoes.vercel.app/" target="_blank">
+      <a class="link" data-event="pageview" data-label="site" href="https://dem-diversoes.vercel.app" target="_blank">
         <i class="fa-solid fa-globe"></i>
         <span>Site Oficial</span>
       </a>
+    </div>
 
+    <script>
+      const track = (name, params = {}) => {
+        if (typeof window.fbq !== "function") return;
+        window.fbq("track", name, params);
+      };
+
+      document.addEventListener("click", (event) => {
+        const link = event.target.closest("a.link");
+        if (!link) return;
+        const evt = link.getAttribute("data-event");
+        const label = link.getAttribute("data-label") || "";
+
+        if (evt === "contact") {
+          track("Contact", { contact_channel: label });
+          return;
+        }
+
+        if (evt === "view") {
+          track("ViewContent", { content_name: label, content_type: "link" });
+          return;
+        }
+
+        if (evt === "pageview") {
+          track("PageView", { content_name: label });
+        }
+      });
+    </script>
 
     <footer>
       © 2026 • Todos os direitos reservados
@@ -188,5 +234,3 @@
 
 </body>
 </html>
-
-
